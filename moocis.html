@@ -1,0 +1,46 @@
+<head>
+  <title>moocis - all your MOOCs in one place</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>moocis - all your MOOCs in one place</h1>
+
+      {{> loginButtons}}
+      {{#if currentUser}}
+        {{> basic_typehead}}
+        <br>
+        <button class="add-coursera-btn">
+          Add Coursera courses
+        </button>
+        <br>
+        <button class="add-edx-btn">
+          Add Edx courses
+        </button>
+        <br>
+        <button class="add-udemy-btn">
+          Add Udemy courses
+        </button>
+      {{/if}}
+    </header>
+    {{> courses}}
+  </div>
+</body>
+
+<template name="courses">
+  Empty for now
+</template>
+
+<template name="basic_typehead">
+  <form class="add-course">
+    <div>
+      <div class="form-group">
+        <input class="form-control typeahead" name="courses" type="text"
+                 placeholder="Add a course" autocomplete="off" spellcheck="off"
+                data-source="getCourses"/>
+        <input type="submit" id="hide"/>
+      </div>
+    </div>
+  </form>
+</template>
